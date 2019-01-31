@@ -14,7 +14,7 @@ def _prefix_callable(bot, message):
     base = [f'<@!{bot.user.id}> ', f'<@{bot.user.id}> ', bot.config['prefix']]
     return base
 
-description = "A discord bot to help you in your daily programming discord life"
+description = ""
 
 
 class Darkhell(commands.Bot):
