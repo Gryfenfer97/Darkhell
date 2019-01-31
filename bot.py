@@ -12,8 +12,6 @@ from miscellaneous import *
 
 def _prefix_callable(bot, message):
     base = [f'<@!{bot.user.id}> ', f'<@{bot.user.id}> ', bot.config['prefix']]
-    # current = utils.get_guild_attr(message.guild, 'prefix')
-    # base.append(current)
     return base
 
 description = "A discord bot to help you in your daily programming discord life"
@@ -55,7 +53,7 @@ class Darkhell(commands.Bot):
             command_splitted = message.content.split(' ')
             if command_splitted[1] == 'cesar':
                 await self.send_message(message.channel,crypter.caesar(True,message.content.split("```")[1],command_splitted[2]))
-                
+
         elif message.content.startswith('!decrypt'):
             command_splitted = message.content.split(' ')
             if command_splitted[1] == 'cesar':
