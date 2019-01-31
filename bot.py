@@ -66,6 +66,10 @@ async def on_message(message):
     elif message.content.startswith('!encrypt'):
         command_splitted = message.content.split(' ')
         if command_splitted[1] == 'cesar':
-            await client.send_message(message_channel,crypter.caesar(True,message.content.split("```")[1],command_splitted[2]))
+            await client.send_message(message.channel,crypter.caesar(True,message.content.split("```")[1],command_splitted[2]))
+    elif message.content.startswith('!decrypt'):
+        command_splitted = message.content.split(' ')
+        if command_splitted[1] == 'cesar':
+            await client.send_message(message.channel,crypter.caesar(False,message.content.split("```")[1],command_splitted[2]))
 
 client.run("NDUyODkyNzM3NzA0ODIwNzM2.DyK26g._0ro1jfWgL5tt1-24tFFhJxwQbk")
