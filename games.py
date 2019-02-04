@@ -28,3 +28,4 @@ def rps(choice):
                 return message.format(scissor_emo,"you lost")
             else:
                 return message.format(scissor_emo,"we're square")
+

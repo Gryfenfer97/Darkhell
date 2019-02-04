@@ -51,13 +51,24 @@ class Darkhell(commands.Bot):
 
         elif message.content.startswith('!encrypt'):
             command_splitted = message.content.split(' ')
-            if command_splitted[1] == 'cesar':
+            if command_splitted[1] == 'caesar':
                 await self.send_message(message.channel,crypter.caesar(True,message.content.split("```")[1],command_splitted[2]))
+            elif command_splitted[1] == 'vigenere':
+                await self.send_message(message.channel,crypter.vigenere(True,message.content.split("```")[1],command_splitted[2]))
 
         elif message.content.startswith('!decrypt'):
             command_splitted = message.content.split(' ')
             if command_splitted[1] == 'cesar':
                 await self.send_message(message.channel,crypter.caesar(False,message.content.split("```")[1],command_splitted[2]))
+            elif command_splitted[1] == 'vigenere':
+                await self.send_message(message.channel,crypter.vigenere(False,message.content.split("```")[1],command_splitted[2]))
+
+        elif message.content.startswith('!joke'):
+            if len(message.content.split(' ')) == 1: #pas de choix de catégorie
+                await self.send_message(message.channel,joke("all"))
+            else:
+                await self.send_message(message.channel,joke(message.content.split(' ')[1]))
+
 
     def run(self, token):
         super().run(token, reconnect=True)
