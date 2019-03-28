@@ -24,5 +24,5 @@ def year_progress():
 
 def joke(categorie):
 	if categorie == "all":
-		categorie = jokes_information["categories"][random.randrange(0,len(jokes_information["categories"]))] #choix de la catégorie
+		categorie = jokes_information["categories_sfw"][random.randrange(0,len(jokes_information["categories_sfw"]))] #choix de la catégorie
 	return "```{0}```".format(jokes_information[categorie][random.randrange(0,len(jokes_information[categorie]))])
