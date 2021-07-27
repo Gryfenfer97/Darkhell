@@ -73,5 +73,3 @@ class Darkhell(commands.Bot):
     def run(self, token):
         super().run(token, reconnect=True)
 
-
-#client.run("NDUyODkyNzM3NzA0ODIwNzM2.DyK26g._0ro1jfWgL5tt1-24tFFhJxwQbk")
